@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Repository Explorer</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <svg height="28" viewBox="0 0 16 16" width="28" aria-hidden="true" fill="currentColor">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+            -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+            .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+            -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27
+            .68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
+            .51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+            0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        <span>GitHub Explorer</span>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#search" class="nav-link">Search</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="home" class="section active">
+      <div class="hero">
+        <h1>Explore GitHub Repositories</h1>
+        <p>Search any GitHub user and browse their public repositories instantly.</p>
+        <button class="btn btn-primary" id="hero-search-btn">Start Searching</button>
+      </div>
+    </section>
+
+    <section id="search" class="section">
+      <div class="container">
+
+        <form id="search-form" novalidate>
+          <div class="form-group">
+            <label for="username-input">GitHub Username</label>
+            <div class="input-row">
+              <input
+                type="text"
+                id="username-input"
+                placeholder="e.g. torvalds"
+                autocomplete="off"
+                aria-describedby="validation-msg"
+              />
+              <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+            <span id="validation-msg" class="validation-msg" role="alert" aria-live="polite"></span>
+          </div>
+        </form>
+
+        <div id="user-profile" class="user-profile hidden" aria-live="polite"></div>
+
+        <div id="controls" class="controls hidden">
+          <div class="filter-group">
+            <label for="language-filter">Language</label>
+            <select id="language-filter">
+              <option value="all">All</option>
+            </select>
+          </div>
+          <div class="sort-group">
+            <label for="sort-select">Sort by</label>
+            <select id="sort-select">
+              <option value="name-asc">Name (A–Z)</option>
+              <option value="name-desc">Name (Z–A)</option>
+              <option value="stars-desc">Stars (High–Low)</option>
+              <option value="stars-asc">Stars (Low–High)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="loading" class="state-msg loading hidden" role="status" aria-live="polite">
+          <div class="spinner" aria-hidden="true"></div>
+          Loading repositories...
+        </div>
+        <div id="error-msg" class="state-msg error hidden" role="alert" aria-live="assertive"></div>
+
+        <div id="repo-grid" class="repo-grid" aria-label="Repositories"></div>
+
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container about-content">
+        <h2>About GitHub Explorer</h2>
+        <p>GitHub Explorer lets you search any public GitHub user and browse their repositories. Filter by language, sort by name or stars, and open any repo directly on GitHub.</p>
+        <ul>
+          <li>Built with vanilla HTML, CSS &amp; JavaScript</li>
+          <li>Uses the public GitHub REST API</li>
+          <li>Remembers your last search with localStorage</li>
+          <li>Fully responsive — works on mobile, tablet, and desktop</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2026 GitHub Explorer &mdash; Powered by the <a href="https://docs.github.com/en/rest" target="_blank" rel="noopener">GitHub REST API</a></p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
