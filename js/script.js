@@ -10,7 +10,6 @@ const errorEl        = document.getElementById('error-msg');
 const controls       = document.getElementById('controls');
 const languageFilter = document.getElementById('language-filter');
 const sortSelect     = document.getElementById('sort-select');
-
 const navLinks      = document.querySelectorAll('.nav-link');
 const sections      = document.querySelectorAll('.section');
 const menuToggle    = document.querySelector('.menu-toggle');
